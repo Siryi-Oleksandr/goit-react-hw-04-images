@@ -11,19 +11,19 @@ export function Modal({ showImage, onClose }) {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [handleKeyDown]);
 
-  const handleKeyDown = evt => {
+  function handleKeyDown(evt) {
     if (evt.code === 'Escape') {
       onClose();
     }
-  };
+  }
 
-  const handleBackdropClick = evt => {
+  function handleBackdropClick(evt) {
     if (evt.currentTarget === evt.target) {
       onClose();
     }
-  };
+  }
 
   return createPortal(
     <div className="overlay" onClick={handleBackdropClick}>
