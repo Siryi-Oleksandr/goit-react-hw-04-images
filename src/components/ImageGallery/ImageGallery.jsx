@@ -1,7 +1,7 @@
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import PropTypes from 'prop-types';
 
-export const ImageGallery = ({ images }) => {
+export function ImageGallery({ images }) {
   return (
     <ul className="imageGallery">
       {images.map(image => (
@@ -11,7 +11,7 @@ export const ImageGallery = ({ images }) => {
       ))}
     </ul>
   );
-};
+}
 
 ImageGallery.propTypes = {
   images: PropTypes.arrayOf(
